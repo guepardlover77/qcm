@@ -3,32 +3,128 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCM en Markdown</title>
+    <title>QCM Interactif et Animé</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .question:hover {
+            transform: translateY(-5px);
+        }
+        .question h3 {
+            margin-bottom: 10px;
+            color: #2980b9;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+        input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        input[type="checkbox"]:checked {
+            transform: scale(1.4);
+            box-shadow: 0 0 5px #2980b9;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #2980b9;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        button:hover {
+            background-color: #3498db;
+            transform: scale(1.05);
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out;
+        }
+        #result.visible {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
 
-<div id="qcm-container"></div>
+<h1>Questionnaire de Choix Multiples (QCM)</h1>
 
-<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<form id="qcm-form">
+    <div class="question">
+        <h3>Question 1 : Quelle est la capitale de la France ?</h3>
+        <label><input type="checkbox" name="q1" value="A"> A) Berlin</label>
+        <label><input type="checkbox" name="q1" value="B"> B) Madrid</label>
+        <label><input type="checkbox" name="q1" value="C"> C) Paris</label>
+        <label><input type="checkbox" name="q1" value="D"> D) Rome</label>
+    </div>
+
+    <div class="question">
+        <h3>Question 2 : Quel est le résultat de 2 + 2 ?</h3>
+        <label><input type="checkbox" name="q2" value="A"> A) 3</label>
+        <label><input type="checkbox" name="q2" value="B"> B) 4</label>
+        <label><input type="checkbox" name="q2" value="C"> C) 5</label>
+        <label><input type="checkbox" name="q2" value="D"> D) 6</label>
+    </div>
+
+    <button type="button" onclick="submitQCM()">Soumettre</button>
+</form>
+
+<p id="result"></p>
+
 <script>
-    const markdownQCM = `
-# Questionnaire de Choix Multiples (QCM)
+    function submitQCM() {
+        let score = 0;
 
-## Question 1 : Quelle est la capitale de la France ?
-- [ ] A) Berlin
-- [ ] B) Madrid
-- [x] C) Paris
-- [ ] D) Rome
+        const correctAnswers = {
+            q1: ['C'],
+            q2: ['B']
+        };
 
-## Question 2 : Quel est le résultat de 2 + 2 ?
-- [ ] A) 3
-- [x] B) 4
-- [ ] C) 5
-- [ ] D) 6
-`;
+        const q1Checked = Array.from(document.querySelectorAll('input[name="q1"]:checked')).map(input => input.value);
+        if (arraysEqual(q1Checked, correctAnswers.q1)) {
+            score += 1;
+        }
 
-    const qcmContainer = document.getElementById('qcm-container');
-    qcmContainer.innerHTML = marked(markdownQCM);
+        const q2Checked = Array.from(document.querySelectorAll('input[name="q2"]:checked')).map(input => input.value);
+        if (arraysEqual(q2Checked, correctAnswers.q2)) {
+            score += 1;
+        }
+
+        const resultElement = document.getElementById('result');
+        resultElement.textContent = `Votre score est de ${score}/2.`;
+        resultElement.classList.add('visible'); // Ajoute la classe pour déclencher l'animation
+    }
+
+    function arraysEqual(arr1, arr2) {
+        if (arr1.length !== arr2.length) return false;
+        arr1.sort();
+        arr2.sort();
+        return arr1.every((value, index) => value === arr2[index]);
+    }
 </script>
 
 </body>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCM Interactif et Animé</title>
+    <title>QCM Interactif avec Illustrations</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -67,6 +67,42 @@
         #result.visible {
             opacity: 1;
         }
+        .correction {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #e9f7ef;
+            border: 1px solid #27ae60;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.5s ease-in-out;
+        }
+        .correction.visible {
+            display: block;
+        }
+        .correction p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .correction .correct {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .correction .incorrect {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .correction .missed {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        .illustration {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            vertical-align: middle;
+        }
     </style>
 </head>
 <body>
@@ -81,6 +117,10 @@
         <label><input type="checkbox" name="q1" value="C"> C) Paris</label>
         <label><input type="checkbox" name="q1" value="D"> D) Rome</label>
     </div>
+	
+	
+	<img src="https://urls.fr/nmTX_7" width="200" height="150"/>
+
 
     <div class="question">
         <h3>Question 2 : Quel est le résultat de 2 + 2 ?</h3>
@@ -94,10 +134,12 @@
 </form>
 
 <p id="result"></p>
+<div id="correction" class="correction"></div>
 
 <script>
     function submitQCM() {
         let score = 0;
+        let correctionHTML = '';
 
         const correctAnswers = {
             q1: ['C'],
@@ -105,18 +147,37 @@
         };
 
         const q1Checked = Array.from(document.querySelectorAll('input[name="q1"]:checked')).map(input => input.value);
+        const q2Checked = Array.from(document.querySelectorAll('input[name="q2"]:checked')).map(input => input.value);
+
+        // Validation pour la question 1
         if (arraysEqual(q1Checked, correctAnswers.q1)) {
             score += 1;
+            correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/148/148767.png" alt="Correct" class="illustration">Question 1 : <span class="correct">Correct</span> - La bonne réponse est Paris.</p>';
+        } else if (q1Checked.length === 0) {
+            correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/1533/1533933.png" alt="Missed" class="illustration">Question 1 : <span class="missed">Manquée</span> - La bonne réponse était Paris.</p>';
+        } else {
+            correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="Incorrect" class="illustration">Question 1 : <span class="incorrect">Incorrect</span> - Vous avez sélectionné : ' + q1Checked.join(', ') + '</p>';
         }
 
-        const q2Checked = Array.from(document.querySelectorAll('input[name="q2"]:checked')).map(input => input.value);
+        // Validation pour la question 2
         if (arraysEqual(q2Checked, correctAnswers.q2)) {
             score += 1;
+            correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/148/148767.png" alt="Correct" class="illustration">Question 2 : <span class="correct">Correct</span> - La bonne réponse est 4.</p>';
+        } else if (q2Checked.length === 0) {
+            correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/1533/1533933.png" alt="Missed" class="illustration">Question 2 : <span class="missed">Manquée</span> - La bonne réponse était 4.</p>';
+        } else {
+            correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="Incorrect" class="illustration">Question 2 : <span class="incorrect">Incorrect</span> - Vous avez sélectionné : ' + q2Checked.join(', ') + '</p>';
         }
 
+        // Affichage du score
         const resultElement = document.getElementById('result');
         resultElement.textContent = `Votre score est de ${score}/2.`;
-        resultElement.classList.add('visible'); // Ajoute la classe pour déclencher l'animation
+        resultElement.classList.add('visible'); // Affiche le résultat avec animation
+
+        // Affichage de la correction
+        const correctionElement = document.getElementById('correction');
+        correctionElement.innerHTML = correctionHTML;
+        correctionElement.classList.add('visible'); // Affiche la correction avec animation
     }
 
     function arraysEqual(arr1, arr2) {

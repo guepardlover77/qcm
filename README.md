@@ -5,7 +5,7 @@
 ## Question 1 : Quelle est la capitale de la France ?
 - [ ] A) Berlin
 - [ ] B) Madrid
-- [x] C) Paris
+- [ ] C) Paris
 - [ ] D) Rome
 
 ## Question 2 : Quel est le résultat de 2 + 2 ?

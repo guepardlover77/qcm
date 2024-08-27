@@ -1,10 +1,11 @@
 <!DOCTYPE html>
+
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QCM Interactif avec Illustrations</title>
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>QCM Interactif avec Illustrations</title>
+<style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
@@ -13,9 +14,14 @@
         }
         h1 {
             color: #2c3e50;
+            text-align: center;
+        }
+        .qcm-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
         }
         .question {
-            margin-bottom: 20px;
             padding: 15px;
             background-color: #fff;
             border-radius: 8px;
@@ -52,6 +58,8 @@
             cursor: pointer;
             font-size: 16px;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            display: block;
+            margin: 20px auto;
         }
         button:hover {
             background-color: #3498db;
@@ -63,6 +71,7 @@
             font-weight: bold;
             opacity: 0;
             transition: opacity 0.8s ease-in-out;
+            text-align: center;
         }
         #result.visible {
             opacity: 1;
@@ -106,48 +115,53 @@
     </style>
 </head>
 <body>
-
 <h1>Questionnaire de Choix Multiples (QCM)</h1>
-
 <form id="qcm-form">
-    <div class="question">
-        <h3>Question 1 : Quelle est la capitale de la France ?</h3>
-        <label><input type="checkbox" name="q1" value="A"> A) Berlin</label>
-        <label><input type="checkbox" name="q1" value="B"> B) Madrid</label>
-        <label><input type="checkbox" name="q1" value="C"> C) Paris</label>
-        <label><input type="checkbox" name="q1" value="D"> D) Rome</label>
-    </div>
-	
-	
-	<img src="https://urls.fr/nmTX_7" width="200" height="150"/>
-
-
-    <div class="question">
-        <h3>Question 2 : Quel est le résultat de 2 + 2 ?</h3>
-        <label><input type="checkbox" name="q2" value="A"> A) 3</label>
-        <label><input type="checkbox" name="q2" value="B"> B) 4</label>
-        <label><input type="checkbox" name="q2" value="C"> C) 5</label>
-        <label><input type="checkbox" name="q2" value="D"> D) 6</label>
-    </div>
-
-    <button type="button" onclick="submitQCM()">Soumettre</button>
+<div class="qcm-container">
+<div class="question">
+<h3>Question 1 : Quelle est la capitale de la France ?</h3>
+<label><input name="q1" type="checkbox" value="A"/> A) Sofia</label>
+<label><input name="q1" type="checkbox" value="B"/> B) Madrid</label>
+<label><input name="q1" type="checkbox" value="C"/> C) Paris</label>
+<label><input name="q1" type="checkbox" value="D"/> D) Rome</label>
+</div>
+<div class="question">
+<h3>Question 2 : Quel est le résultat de 2 + 1 ?</h3>
+<label><input name="q2" type="checkbox" value="A"/> A) 3</label>
+<label><input name="q2" type="checkbox" value="B"/> B) 4</label>
+<label><input name="q2" type="checkbox" value="C"/> C) 5</label>
+<label><input name="q2" type="checkbox" value="D"/> D) 6</label>
+</div>
+<div class="question">
+<h3>Question 3 : Quel est le gâteau préféré de matheo ?</h3>
+<label><input name="q3" type="checkbox" value="A"/> A) tiramisu</label>
+<label><input name="q3" type="checkbox" value="B"/> B) brownie</label>
+<label><input name="q3" type="checkbox" value="C"/> C) cookies</label>
+<label><input name="q3" type="checkbox" value="D"/> D) tarte au citron meringuée</label>
+</div>
+<div class="question"><h3>Question 4 : Quelle est la couleur du ciel par temps clair ?</h3><label><input name="q4" type="checkbox" value="A"/> A) Bleu</label><label><input name="q4" type="checkbox" value="B"/> B) Rouge</label><label><input name="q4" type="checkbox" value="C"/> C) Vert</label><label><input name="q4" type="checkbox" value="D"/> D) Jaune</label></div><div class="question"><h3>Question 5 : ou est ne matheo</h3><label><input name="q5" type="checkbox" value="A"/> A) parid</label><label><input name="q5" type="checkbox" value="B"/> B) marseille</label><label><input name="q5" type="checkbox" value="C"/> C) niort</label><label><input name="q5" type="checkbox" value="D"/> D) etampes</label></div><div class="question"><h3>Question 6 : fezjop</h3><label><input name="q6" type="checkbox" value="A"/> A) fezio</label><label><input name="q6" type="checkbox" value="B"/> B) lmfjd</label><label><input name="q6" type="checkbox" value="C"/> C) vbudi</label><label><input name="q6" type="checkbox" value="D"/> D) lmxjqsc</label></div></div>
+<button onclick="submitQCM()" type="button">Soumettre</button>
 </form>
-
 <p id="result"></p>
-<div id="correction" class="correction"></div>
-
+<div class="correction" id="correction"></div>
 <script>
     function submitQCM() {
         let score = 0;
         let correctionHTML = '';
 
         const correctAnswers = {
+q5: ['D'],
+
+q4: ['A'],
+
             q1: ['C'],
-            q2: ['B']
+            q2: ['B'],
+			q3: ['A']
         };
 
         const q1Checked = Array.from(document.querySelectorAll('input[name="q1"]:checked')).map(input => input.value);
         const q2Checked = Array.from(document.querySelectorAll('input[name="q2"]:checked')).map(input => input.value);
+		const q3Checked = Array.from(document.querySelectorAll('input[name="q3"]:checked')).map(input => input.value);
 
         // Validation pour la question 1
         if (arraysEqual(q1Checked, correctAnswers.q1)) {
@@ -169,15 +183,26 @@
             correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="Incorrect" class="illustration">Question 2 : <span class="incorrect">Incorrect</span> - Vous avez sélectionné : ' + q2Checked.join(', ') + '</p>';
         }
 
+		// Validation pour la question 3
+        if (arraysEqual(q3Checked, correctAnswers.q3)) {
+            score += 1;
+            correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/148/148767.png" alt="Correct" class="illustration">Question 3 : <span class="correct">Correct</span> - La bonne réponse est le tiramisu.</p>';
+        } else if (q1Checked.length === 0) {
+            correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/1533/1533933.png" alt="Missed" class="illustration">Question 3 : <span class="missed">Manquée</span> - La bonne réponse était le tiramisu.</p>';
+        } else {
+            correctionHTML += '<p><img src="https://cdn-icons-png.flaticon.com/512/753/753345.png" alt="Incorrect" class="illustration">Question 3 : <span class="incorrect">Incorrect</span> - Vous avez sélectionné : ' + q3Checked.join(', ') + '</p>';
+        }
+
+
         // Affichage du score
         const resultElement = document.getElementById('result');
-        resultElement.textContent = `Votre score est de ${score}/2.`;
-        resultElement.classList.add('visible'); // Affiche le résultat avec animation
+        resultElement.textContent = `Votre score est de ${score}/3.`;
+        resultElement.classList.add('visible');
 
         // Affichage de la correction
         const correctionElement = document.getElementById('correction');
         correctionElement.innerHTML = correctionHTML;
-        correctionElement.classList.add('visible'); // Affiche la correction avec animation
+        correctionElement.classList.add('visible');
     }
 
     function arraysEqual(arr1, arr2) {
@@ -187,6 +212,5 @@
         return arr1.every((value, index) => value === arr2[index]);
     }
 </script>
-
 </body>
 </html>

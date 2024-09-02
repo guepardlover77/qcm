@@ -3,10 +3,7 @@ import json
 import os
 
 QCM_FILE = "qcm.json"
-USERS = {
-    "admin": bcrypt.hashpw("password123".encode(), bcrypt.gensalt()).decode()
-}
-
+USERS = {"admin": "password123"}
 
 def load_qcm():
     if os.path.exists(QCM_FILE):
@@ -188,7 +185,7 @@ def main():
             username = st.text_input("Nom d'utilisateur")
             password = st.text_input("Mot de passe", type="password")
             if st.button("🔑 Connexion"):
-                if username in USERS and bcrypt.checkpw(password.encode(), USERS[username].encode()):
+                if USERS.get(username) == password:
                     st.session_state.logged_in = True
                     st.experimental_set_query_params()
                 else:
@@ -200,3 +197,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+    

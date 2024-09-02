@@ -1,7 +1,6 @@
 import streamlit as st
 import json
 import os
-import bcrypt
 
 QCM_FILE = "qcm.json"
 USERS = {

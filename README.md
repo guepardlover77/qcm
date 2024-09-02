@@ -22,7 +22,7 @@
 **Question 1:** Exemple de question pour la catégorie choisie.
 
 - [ ] Réponse 1
-- [ ] Réponse 2
+* [ ] Réponse 2
 - [ ] Réponse 3
 
 🚀 [Soumettre la réponse](#)

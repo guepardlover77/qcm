@@ -6,14 +6,7 @@ QCM_FILE = "qcm.json"
 USERS = {"admin": "password123"}
 
 
-if st.button("Voir la FAQ"):
-    # Si le bouton est cliqué, redirige vers faq.py
-    redirect_script = """
-    <script>
-        window.location.href = 'faqtutoratue3.streamlit.app';
-    </script>
-    """
-    st.markdown(redirect_script, unsafe_allow_html=True)
+st.link_button("Voir la FAQ (oui oui)", "faqtutoratue3.streamlit.app/")
 
 def load_qcm():
     if os.path.exists(QCM_FILE):

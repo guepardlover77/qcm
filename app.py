@@ -80,8 +80,6 @@ def main():
         faq_interface()
     else:
         st.title("📋 QCM")
-        st.markdown("### Répondez aux QCM suivants :")
-
         categories = ["Toutes", "physique", "chimie", "maths"]
         selected_category = st.selectbox("Choisissez une catégorie de QCM", categories)
 

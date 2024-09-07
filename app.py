@@ -10,7 +10,7 @@ if st.button("Voir la FAQ"):
     # Si le bouton est cliqué, redirige vers faq.py
     redirect_script = """
     <script>
-        window.location.href = 'faq.py';
+        window.location.href = 'faqtutoratue3.streamlit.app';
     </script>
     """
     st.markdown(redirect_script, unsafe_allow_html=True)

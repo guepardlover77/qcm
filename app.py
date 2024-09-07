@@ -5,6 +5,12 @@ import os
 QCM_FILE = "qcm.json"
 USERS = {"admin": "password123"}
 
+st.set_page_config(
+    page_title="GROS SITE DE FOUUUUUUUUU",
+    page_icon="🩺",
+    layout="centered",
+    initial_sidebar_state="auto")
+
 def load_qcm():
     if os.path.exists(QCM_FILE):
         with open(QCM_FILE, "r", encoding="utf-8") as f:

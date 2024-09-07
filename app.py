@@ -5,8 +5,8 @@ import os
 QCM_FILE = "qcm.json"
 USERS = {"admin": "password123"}
 
-
-st.markdown("[Voir la FAQ]faqtutoratue3.streamlit.app")
+link='[Voir la FAQ](faqtutoratue3.streamlit.app)'
+st.markdown(link)
 
 def load_qcm():
     if os.path.exists(QCM_FILE):

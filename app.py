@@ -6,6 +6,15 @@ QCM_FILE = "qcm.json"
 USERS = {"admin": "password123"}
 
 
+if st.button("Voir la FAQ"):
+    # Si le bouton est cliqué, redirige vers faq.py
+    redirect_script = """
+    <script>
+        window.location.href = 'faq.py';
+    </script>
+    """
+    st.markdown(redirect_script, unsafe_allow_html=True)
+
 def load_qcm():
     if os.path.exists(QCM_FILE):
         with open(QCM_FILE, "r", encoding="utf-8") as f:

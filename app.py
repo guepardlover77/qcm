@@ -72,7 +72,7 @@ def admin_interface(qcm_data):
 
 def main():
     qcm_data = load_qcm()
-    page = st.sidebar.selectbox("Navigation", ["Utilisateur", "Administration", "FAQ"])
+    page = st.sidebar.button("Utilisateur", "Administration", "FAQ")
 
     if page == "Administration":
         admin_interface(qcm_data)

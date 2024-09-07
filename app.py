@@ -6,7 +6,7 @@ QCM_FILE = "qcm.json"
 USERS = {"admin": "password123"}
 
 
-st.link_button("Voir la FAQ (oui oui)", "faqtutoratue3.streamlit.app", type="primary")
+st.markdown("[Voir la FAQ]faqtutoratue3.streamlit.app")
 
 def load_qcm():
     if os.path.exists(QCM_FILE):

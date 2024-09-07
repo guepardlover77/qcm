@@ -168,11 +168,7 @@ def ajouter_images(images, prefix, idx):
     return image_paths
 
 def faq_interface():
-    st.set_page_config(
-    page_title="FAQ Anonyme - Médecine et Biophysique",
-    page_icon="🩺",
-    layout="centered",
-    initial_sidebar_state="auto")
+    
 
     st.title("🩺 Foire Aux Questions Anonyme")
     st.markdown("""

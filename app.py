@@ -72,10 +72,6 @@ def admin_interface(qcm_data):
 
 def main():
     qcm_data = load_qcm()
-
-    st.sidebar.title("Bienvenue dans l'application QCM")
-
-    # Set default page to "Utilisateur" instead of "Administration"
     page = st.sidebar.selectbox("Navigation", ["Utilisateur", "Administration", "FAQ"])
 
     if page == "Administration":

@@ -1,6 +1,5 @@
 Voici la réécriture des quatre premières pages de votre document en Markdown, avec les ajustements proposés pour condenser le texte.
 
-```markdown
 # pH et Équilibre Acido-Basique
 
 ## Introduction

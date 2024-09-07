@@ -5,6 +5,7 @@ import os
 QCM_FILE = "qcm.json"
 USERS = {"admin": "password123"}
 
+
 def load_qcm():
     if os.path.exists(QCM_FILE):
         with open(QCM_FILE, "r", encoding="utf-8") as f:
@@ -15,15 +16,18 @@ def load_qcm():
             return qcm_data
     return []
 
+
 def save_qcm(qcm_data):
     with open(QCM_FILE, "w", encoding="utf-8") as f:
         json.dump(qcm_data, f, indent=4)
+
 
 def delete_qcm(qcm_index):
     qcm_data = load_qcm()
     if 0 <= qcm_index < len(qcm_data):
         qcm_data.pop(qcm_index)
         save_qcm(qcm_data)
+
 
 def admin_interface(qcm_data):
     st.title("🛠️ Interface d'Administration des QCM")
@@ -60,11 +64,12 @@ def admin_interface(qcm_data):
             st.experimental_set_query_params()  # Re-run to refresh after deletion
         st.markdown("---")
 
+
 def main():
     qcm_data = load_qcm()
 
     st.sidebar.title("Bienvenue dans l'application QCM")
-    
+
     # Set default page to "Utilisateur" instead of "Administration"
     page = st.sidebar.selectbox("Navigation", ["Utilisateur", "Administration"])
 
@@ -85,8 +90,8 @@ def main():
         for idx, qcm in enumerate(filtered_qcm_data):
             st.markdown(f"#### {idx + 1}. {qcm['question']} (Catégorie: {qcm['category']})")
             selected_option = st.radio(
-                f"Veuillez choisir une réponse pour la question {idx + 1}:", 
-                qcm['choices'], 
+                f"Veuillez choisir une réponse pour la question {idx + 1}:",
+                qcm['choices'],
                 key=f"qcm_{idx}"
             )
 
@@ -96,6 +101,7 @@ def main():
                 else:
                     st.error("Mauvaise réponse!")
             st.markdown("---")
+
 
 if __name__ == "__main__":
     main()

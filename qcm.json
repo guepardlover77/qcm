@@ -478,5 +478,148 @@
             "9x^2 - 49"
         ],
         "category": "maths"
+    },
+    [
+    {
+        "question": "Quels sont les atomes les plus souvent rencontrés dans les molécules organiques ?",
+        "choices": [
+            "Soufre, Phosphore, Magnésium, Zinc",
+            "Carbone, Hydrogène, Oxygène, Azote",
+            "Sodium, Lithium, Potassium, Calcium",
+            "Oxygène, Azote, Fluor, Iode",
+            "Carbone, Oxygène, Calcium, Soufre"
+        ],
+        "correct_options": [
+            "Carbone, Hydrogène, Oxygène, Azote"
+        ],
+        "category": "chimie"
+    },
+    {
+        "question": "Quelle règle doit être respectée lors de l’association des atomes dans les molécules organiques ?",
+        "choices": [
+            "Règle du nombre d'avogadro",
+            "Règle de Hund",
+            "Règle de Pauli",
+            "Règle de l'octet",
+            "Règle de la conservation de la masse"
+        ],
+        "correct_options": [
+            "Règle de l'octet"
+        ],
+        "category": "chimie"
+    },
+    {
+        "question": "Qu'est-ce qu'une réaction chimique organique ?",
+        "choices": [
+            "Un processus de stabilisation thermique",
+            "Un processus de création de matière",
+            "Un processus d'équilibrage de charges",
+            "Un processus de destruction de matière",
+            "Un processus de transformation de matière"
+        ],
+        "correct_options": [
+            "Un processus de transformation de matière"
+        ],
+        "category": "chimie"
+    },
+    {
+        "question": "Quel type de liaison est formée lorsque deux atomes partagent un doublet d'électrons de manière homogène ?",
+        "choices": [
+            "Liaison ionique",
+            "Liaison covalente polarisée",
+            "Liaison covalente non polarisée",
+            "Liaison métallique",
+            "Liaison hydrogène"
+        ],
+        "correct_options": [
+            "Liaison covalente non polarisée"
+        ],
+        "category": "chimie"
+    },
+    {
+        "question": "Quel est l'effet de l'inducteur -I dans une molécule ?",
+        "choices": [
+            "Il repousse les électrons",
+            "Il ne change pas la répartition des électrons",
+            "Il attire les électrons",
+            "Il accélère la réaction",
+            "Il stabilise les électrons"
+        ],
+        "correct_options": [
+            "Il attire les électrons"
+        ],
+        "category": "chimie"
+    },
+    {
+        "question": "Dans une réaction chimique, que signifie le terme 'nucléophile' ?",
+        "choices": [
+            "Réactif riche en électrons",
+            "Réactif pauvre en électrons",
+            "Réactif qui donne des protons",
+            "Réactif sans électrons",
+            "Réactif qui donne des neutrons"
+        ],
+        "correct_options": [
+            "Réactif riche en électrons"
+        ],
+        "category": "chimie"
+    },
+    {
+        "question": "Quel est le type de réaction impliquant des radicaux libres ?",
+        "choices": [
+            "Réaction électrocyclique",
+            "Réaction de précipitation",
+            "Réaction hétérolytique",
+            "Réaction acido-basique",
+            "Réaction homolytique"
+        ],
+        "correct_options": [
+            "Réaction homolytique"
+        ],
+        "category": "chimie"
+    },
+    {
+        "question": "Quelle est la principale caractéristique d'une liaison polarisée ?",
+        "choices": [
+            "Un des atomes attire plus les électrons que l'autre",
+            "Les électrons ne bougent pas",
+            "Les électrons sont également partagés",
+            "Les atomes sont liés par une force électrostatique",
+            "La liaison est toujours stable"
+        ],
+        "correct_options": [
+            "Un des atomes attire plus les électrons que l'autre"
+        ],
+        "category": "chimie"
+    },
+    {
+        "question": "Quel est l'effet mésomère +M dans une molécule ?",
+        "choices": [
+            "Il diminue l'énergie de liaison",
+            "Il retire des électrons à une liaison",
+            "Il ne change pas la répartition des électrons",
+            "Il donne des électrons à une liaison",
+            "Il augmente la polarité de la liaison"
+        ],
+        "correct_options": [
+            "Il donne des électrons à une liaison"
+        ],
+        "category": "chimie"
+    },
+    {
+        "question": "Quel processus est responsable de la rupture d'une liaison dans une réaction hétérolytique ?",
+        "choices": [
+            "Transfert concerté d'électrons",
+            "Perte d'énergie thermique",
+            "Redistribution asymétrique des électrons",
+            "Ionisation des atomes",
+            "Partage symétrique des électrons"
+        ],
+        "correct_options": [
+            "Redistribution asymétrique des électrons"
+        ],
+        "category": "chimie"
     }
+]
+
 ]

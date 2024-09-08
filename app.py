@@ -17,6 +17,9 @@ def load_qcm():
     if os.path.exists(QCM_FILE):
         with open(QCM_FILE, "r", encoding="utf-8") as f:
             qcm_data = json.load(f)
+            for qcm in qcm_data:
+                if "category" not in qcm:
+                    qcm["category"] = "maths"
             return qcm_data
     return []
 
@@ -114,7 +117,7 @@ def ajouter_question(question, images_paths):
     data["questions"].append({
         "question": question,
         "reponses": [],
-        "images": images_paths 
+        "images": images_paths
     })
     sauvegarder_donnees(data)
 
@@ -124,7 +127,7 @@ def ajouter_reponse(index_question, reponse, images_paths):
         "texte": reponse,
         "like": 0,
         "dislike": 0,
-        "images": images_paths 
+        "images": images_paths
     })
     sauvegarder_donnees(data)
 
@@ -205,7 +208,7 @@ def faq_interface():
                                        type=["png", "jpg", "jpeg"], key="images_question")
     if st.button("Soumettre la question", key="submit_question"):
         if nouvelle_question.strip() != "":
-            images_paths = ajouter_images(images_question, "question", len(data["questions"])) 
+            images_paths = ajouter_images(images_question, "question", len(data["questions"]))
             ajouter_question(nouvelle_question.strip(), images_paths)
             st.success("Votre question a été soumise de manière anonyme !")
         else:

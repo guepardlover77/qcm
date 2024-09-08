@@ -37,7 +37,7 @@ def admin_interface(qcm_data):
     st.title("🛠️ Interface d'Administration des QCM")
     st.markdown("### Ajouter ou modifier les QCM ici 👇")
 
-    categories = ["physique", "chimie", "maths"]
+    categories = ["physique", "Chimie Orga", "maths", "Glucides"]
     category = st.selectbox("Choisissez la catégorie du QCM", categories)
     question = st.text_input("Question")
     choices = st.text_area("Choix (séparés par des virgules)").split(",")

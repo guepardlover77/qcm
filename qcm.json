@@ -491,7 +491,7 @@
         "correct_options": [
             "Carbone, Hydrogène, Oxygène, Azote"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
         "question": "Quelle règle doit être respectée lors de l’association des atomes dans les molécules organiques ?",
@@ -505,7 +505,7 @@
         "correct_options": [
             "Règle de l'octet"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
         "question": "Qu'est-ce qu'une réaction chimique organique ?",
@@ -519,7 +519,7 @@
         "correct_options": [
             "Un processus de transformation de matière"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
         "question": "Quel type de liaison est formée lorsque deux atomes partagent un doublet d'électrons de manière homogène ?",
@@ -533,7 +533,7 @@
         "correct_options": [
             "Liaison covalente non polarisée"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
         "question": "Quel est l'effet de l'inducteur -I dans une molécule ?",
@@ -547,7 +547,7 @@
         "correct_options": [
             "Il attire les électrons"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
         "question": "Dans une réaction chimique, que signifie le terme 'nucléophile' ?",
@@ -561,7 +561,7 @@
         "correct_options": [
             "Réactif riche en électrons"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
         "question": "Quel est le type de réaction impliquant des radicaux libres ?",
@@ -575,7 +575,7 @@
         "correct_options": [
             "Réaction homolytique"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
         "question": "Quelle est la principale caractéristique d'une liaison polarisée ?",
@@ -589,7 +589,7 @@
         "correct_options": [
             "Un des atomes attire plus les électrons que l'autre"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
         "question": "Quel est l'effet mésomère +M dans une molécule ?",
@@ -603,7 +603,7 @@
         "correct_options": [
             "Il donne des électrons à une liaison"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
         "question": "Quel processus est responsable de la rupture d'une liaison dans une réaction hétérolytique ?",
@@ -617,7 +617,7 @@
         "correct_options": [
             "Redistribution asymétrique des électrons"
         ],
-        "category": "Chimie orga"
+        "category": "Chimie Orga"
     },
     {
     "question": "Quel est le rôle principal du glucose dans l'organisme humain ?",

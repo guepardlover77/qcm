@@ -4,12 +4,14 @@ import os
 
 QCM_FILE = "qcm.json"
 USERS = {"admin": "password123"}
+DATA_FILE = "questions_reponses.json"
 
 st.set_page_config(
     page_title="GROS SITE DE FOUUUUUUUUU",
     page_icon="🩺",
     layout="centered",
-    initial_sidebar_state="auto")
+    initial_sidebar_state="auto"
+)
 
 def load_qcm():
     if os.path.exists(QCM_FILE):
@@ -21,18 +23,15 @@ def load_qcm():
             return qcm_data
     return []
 
-
 def save_qcm(qcm_data):
     with open(QCM_FILE, "w", encoding="utf-8") as f:
         json.dump(qcm_data, f, indent=4)
-
 
 def delete_qcm(qcm_index):
     qcm_data = load_qcm()
     if 0 <= qcm_index < len(qcm_data):
         qcm_data.pop(qcm_index)
         save_qcm(qcm_data)
-
 
 def admin_interface(qcm_data):
     st.title("🛠️ Interface d'Administration des QCM")
@@ -55,9 +54,9 @@ def admin_interface(qcm_data):
         save_qcm(qcm_data)
         st.success("QCM ajouté avec succès!")
         st.experimental_set_query_params()
+
     st.markdown("---")
     st.markdown("### Liste des QCM existants :")
-
     for idx, qcm in enumerate(qcm_data):
         st.markdown(f"#### {idx + 1}. {qcm['question']} (Catégorie: {qcm['category']})")
         for choice in qcm['choices']:
@@ -67,7 +66,6 @@ def admin_interface(qcm_data):
             delete_qcm(idx)
             st.experimental_set_query_params()
         st.markdown("---")
-
 
 def main():
     qcm_data = load_qcm()
@@ -102,9 +100,7 @@ def main():
                     st.error("Mauvaise réponse!")
             st.markdown("---")
 
-#PAGE DE LA FAQ
-
-DATA_FILE = "questions_reponses.json"
+# PAGE DE LA FAQ
 
 def charger_donnees():
     if os.path.exists(DATA_FILE):

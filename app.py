@@ -17,9 +17,6 @@ def load_qcm():
     if os.path.exists(QCM_FILE):
         with open(QCM_FILE, "r", encoding="utf-8") as f:
             qcm_data = json.load(f)
-            for qcm in qcm_data:
-                if "category" not in qcm:
-                    qcm["category"] = "maths"
             return qcm_data
     return []
 

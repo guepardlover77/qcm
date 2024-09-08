@@ -107,39 +107,40 @@ def main():
 
 DATA_FILE = "questions_reponses.json"
 
+# Charger les données depuis le fichier JSON
 def charger_donnees():
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r") as f:
             return json.load(f)
     return {"questions": []}
 
-
+# Sauvegarder les données dans le fichier JSON
 def sauvegarder_donnees(data):
     with open(DATA_FILE, "w") as f:
         json.dump(data, f, indent=4)
 
+# Ajouter une nouvelle question avec des images (facultatif)
 def ajouter_question(question, images_paths):
     data = charger_donnees()
     data["questions"].append({
         "question": question,
         "reponses": [],
-        "images": images_paths  # Nouveau champ pour stocker les chemins d'images
+        "images": images_paths  # Enregistrement des chemins des images de la question
     })
     sauvegarder_donnees(data)
 
-
-
-
+# Ajouter une nouvelle réponse à une question donnée avec des images (facultatif)
 def ajouter_reponse(index_question, reponse, images_paths):
     data = charger_donnees()
     data["questions"][index_question]["reponses"].append({
         "texte": reponse,
         "like": 0,
         "dislike": 0,
-        "images": images_paths  # Nouveau champ pour stocker les chemins d'images
+        "images": images_paths  # Enregistrement des chemins des images de la réponse
     })
     sauvegarder_donnees(data)
 
+# Mettre à jour les scores de "like" ou "dislike" pour une réponse
 def mettre_a_jour_score(index_question, index_reponse, action):
     data = charger_donnees()
     if action == "like":
@@ -148,39 +149,43 @@ def mettre_a_jour_score(index_question, index_reponse, action):
         data["questions"][index_question]["reponses"][index_reponse]["dislike"] += 1
     sauvegarder_donnees(data)
 
+# Sauvegarder une image sur le disque
 def sauvegarder_image(image, nom_fichier):
     dossier = os.path.dirname(nom_fichier)
     if not os.path.exists(dossier):
         os.makedirs(dossier)
-
     with open(nom_fichier, "wb") as f:
         f.write(image.getbuffer())
 
-
+# Ajouter des images et retourner leurs chemins pour enregistrement dans le JSON
 def ajouter_images(images, prefix, idx):
     image_paths = []
     if images:
         for image_index, image in enumerate(images):
-            # Créer un nom de fichier unique basé sur l'index et le temps
             image_path = f"images/{prefix}_{idx}_{image_index}.jpg"
             sauvegarder_image(image, image_path)
             image_paths.append(image_path)
     return image_paths
 
+# Interface de la FAQ
 def faq_interface():
-    
-
     st.title("🩺 Foire Aux Questions Anonyme")
     st.markdown("""
-    Oyé oyé preux chevaliers. Vous avez ici de quoi parler entre vous anonymement donc posez vos questions bêtes !!!! L'idée c'est, d'une part que les tuteurs vous répondent mais aussi que vous parliez entre vous parce qu'on commence pas à jouer au foot avec Messi... Et à part cette FAQ (totalement anonyme, c'est important), vous pouvez toujours venir poser des questions aux @les_perdrisotopes sur insta !!! Allez kissou kissou et bon courage <3
+    Bienvenue à la FAQ anonyme ! Vous pouvez poser vos questions et y répondre de manière anonyme.
+    N'oubliez pas que vous pouvez également aimer ou ne pas aimer les réponses données.
     """)
+
     data = charger_donnees()
+    
     if data["questions"]:
         for idx, q in enumerate(data["questions"]):
             with st.expander(f"Question {idx + 1}: {q['question']}"):
+                # Affichage des images de la question (si présentes)
                 if "images" in q and q["images"]:
                     for image_url in q["images"]:
                         st.image(image_url, use_column_width=True)
+                
+                # Affichage des réponses
                 if q["reponses"]:
                     reponses_tries = sorted(q["reponses"], key=lambda rep: rep.get("like", 0), reverse=True)
                     for rep_idx, rep in enumerate(reponses_tries):
@@ -189,9 +194,13 @@ def faq_interface():
                             like = rep["like"]
                             dislike = rep["dislike"]
                             st.write(f"Réponse {rep_idx + 1}: {texte_rep} (👍 {like}, 👎 {dislike})")
+                            
+                            # Affichage des images associées à la réponse
                             if "images" in rep and rep["images"]:
                                 for image_url in rep["images"]:
                                     st.image(image_url, use_column_width=True)
+
+                            # Boutons pour aimer ou ne pas aimer la réponse
                             col1, col2 = st.columns(2)
                             with col1:
                                 if st.button(f"👍 J'aime ({like})", key=f"like_{idx}_{rep_idx}"):
@@ -205,6 +214,8 @@ def faq_interface():
                             st.error(f"Erreur dans la structure des données pour la réponse {rep_idx + 1}.")
                 else:
                     st.info("Aucune réponse pour cette question pour le moment.")
+
+                # Formulaire pour ajouter une nouvelle réponse
                 nouvelle_reponse = st.text_area(f"Ajouter une réponse à la question {idx + 1}", key=f"reponse_{idx}")
                 images_reponse = st.file_uploader(f"Joindre des images à la réponse {idx + 1} (facultatif)",
                                                   accept_multiple_files=True, type=["png", "jpg", "jpeg"],
@@ -216,6 +227,8 @@ def faq_interface():
                         st.success("Votre réponse a été soumise avec succès !")
                     else:
                         st.error("Veuillez entrer une réponse avant de soumettre.")
+
+    # Formulaire pour ajouter une nouvelle question
     st.subheader("Poser une nouvelle question (Anonyme)")
     nouvelle_question = st.text_area("Tapez votre question ici :", "", key="nouvelle_question")
     images_question = st.file_uploader("Joindre des images à la question (facultatif)", accept_multiple_files=True,
@@ -228,6 +241,6 @@ def faq_interface():
         else:
             st.error("Veuillez entrer une question avant de soumettre.")
 
-
+# Lancer l'interface Streamlit
 if __name__ == "__main__":
     main()

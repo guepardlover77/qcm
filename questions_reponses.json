@@ -4,14 +4,7 @@
       "question": "Comment on sait quand c'est +, - ou 0 dans le tableau du pHi ?",
       "reponses": [
         {
-          "texte": "L'idée c'est qu'avant le pKa de l'acide aminé qu'on traite, le groupement spécifique de cet acide aminé sera acide et une fois le pKa dépassé, il sera basique. On sait qu'un acide est un espèce capable de céder un ou plusieurs H+ donc on s'attend à avoir un excès de proton (H+) dans la forme acide.
-          Pour C-term : d'abord COOH (acide) et ensuite COO- (basique)
-          Pour N-term : d'abord NH3+ et ensuite NH2
-          Pour Asp et Glu : d'abord COOH et ensuite COO-
-          Pour His : d'abord NH+ et ensuite N
-          Pour Tyr : d'abord OH et ensuite O-
-          Pour Lys : d'abord NH3+ et ensuite NH2
-          Pour Arg : d'abord NH2+ et ensuite NH",
+          "texte": "",
           "like": 0,
           "dislike": 0,
           "images": [

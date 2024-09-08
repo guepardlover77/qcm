@@ -491,7 +491,7 @@
         "correct_options": [
             "Carbone, Hydrogène, Oxygène, Azote"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
         "question": "Quelle règle doit être respectée lors de l’association des atomes dans les molécules organiques ?",
@@ -505,7 +505,7 @@
         "correct_options": [
             "Règle de l'octet"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
         "question": "Qu'est-ce qu'une réaction chimique organique ?",
@@ -519,7 +519,7 @@
         "correct_options": [
             "Un processus de transformation de matière"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
         "question": "Quel type de liaison est formée lorsque deux atomes partagent un doublet d'électrons de manière homogène ?",
@@ -533,7 +533,7 @@
         "correct_options": [
             "Liaison covalente non polarisée"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
         "question": "Quel est l'effet de l'inducteur -I dans une molécule ?",
@@ -547,7 +547,7 @@
         "correct_options": [
             "Il attire les électrons"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
         "question": "Dans une réaction chimique, que signifie le terme 'nucléophile' ?",
@@ -561,7 +561,7 @@
         "correct_options": [
             "Réactif riche en électrons"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
         "question": "Quel est le type de réaction impliquant des radicaux libres ?",
@@ -575,7 +575,7 @@
         "correct_options": [
             "Réaction homolytique"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
         "question": "Quelle est la principale caractéristique d'une liaison polarisée ?",
@@ -589,7 +589,7 @@
         "correct_options": [
             "Un des atomes attire plus les électrons que l'autre"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
         "question": "Quel est l'effet mésomère +M dans une molécule ?",
@@ -603,7 +603,7 @@
         "correct_options": [
             "Il donne des électrons à une liaison"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
         "question": "Quel processus est responsable de la rupture d'une liaison dans une réaction hétérolytique ?",
@@ -617,7 +617,7 @@
         "correct_options": [
             "Redistribution asymétrique des électrons"
         ],
-        "category": "chimie"
+        "category": "Chimie orga"
     },
     {
     "question": "Quel est le rôle principal du glucose dans l'organisme humain ?",
@@ -631,7 +631,7 @@
     "correct_options": [
         "Rôle énergétique"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 },
     {
     "question": "Quel est le disaccharide réducteur constitué de glucose et de galactose ?",
@@ -645,7 +645,7 @@
     "correct_options": [
         "Lactose"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 },
     {
     "question": "Parmi les isomères du glucose, lequel est un épimère en C4 ?",
@@ -659,7 +659,7 @@
     "correct_options": [
         "Galactose"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 },
     {
     "question": "Quelle est la caractéristique principale des osides non réducteurs ?",
@@ -673,7 +673,7 @@
     "correct_options": [
         "Ils ne présentent pas de fonction hémiacétalique libre"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 },
     {
     "question": "Quel est le rôle des glycoprotéines dans les cellules ?",
@@ -687,7 +687,7 @@
     "correct_options": [
         "Protéger contre les protéases"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 },
     {
     "question": "Quel cycle métabolique utilise le glucose comme principal carburant ?",
@@ -701,7 +701,7 @@
     "correct_options": [
         "Glycolyse"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 },
     {
     "question": "Quel type de liaison est présent dans le maltose ?",
@@ -715,7 +715,7 @@
     "correct_options": [
         "Liaison α 1-4 glucosidique"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 },
     {
     "question": "Quelle propriété distingue les cétoses des aldoses ?",
@@ -729,7 +729,7 @@
     "correct_options": [
         "Les cétoses sont très peu réducteurs"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 },
     {
     "question": "Quel est l'effet d'une absence d'épimérase sur le métabolisme du galactose ?",
@@ -743,7 +743,7 @@
     "correct_options": [
         "Accumulation de galactose conduisant à la galactosémie"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 },
     {
     "question": "Quel est le produit final de la glycolyse ?",
@@ -757,6 +757,6 @@
     "correct_options": [
         "Pyruvate"
     ],
-    "category": "biochimie"
+    "category": "Glucides"
 }
 ]

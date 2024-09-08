@@ -7,7 +7,7 @@ USERS = {"admin": "password123"}
 DATA_FILE = "questions_reponses.json"
 
 st.set_page_config(
-    page_title="GROS SITE DE FOUUUUUUUUU",
+    page_title="L.AS POITIERS",
     page_icon="🩺",
     layout="centered",
     initial_sidebar_state="auto"

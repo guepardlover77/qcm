@@ -167,7 +167,7 @@ def faq_interface():
     data = charger_donnees()
     if data["questions"]:
         for idx, q in enumerate(data["questions"]):
-            with st.expander(f"Question {idx + 1}: {q['question']}"):
+            with st.expander(f"**❓ Question** : {q['question']}"):
                 if "images" in q and q["images"]:
                     for image_url in q["images"]:
                         st.image(image_url, use_column_width=True)
@@ -178,7 +178,7 @@ def faq_interface():
                             texte_rep = rep["texte"]
                             like = rep["like"]
                             dislike = rep["dislike"]
-                            st.write(f"Réponse {rep_idx + 1}: {texte_rep} (👍 {like}, 👎 {dislike})")
+                            st.write(f"**💬 Réponse** : {texte_rep} (👍 {like}, 👎 {dislike})")
                             if "images" in rep and rep["images"]:
                                 for image_url in rep["images"]:
                                     st.image(image_url, use_column_width=True)

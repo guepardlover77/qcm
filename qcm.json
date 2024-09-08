@@ -479,7 +479,6 @@
         ],
         "category": "maths"
     },
-    [
     {
         "question": "Quels sont les atomes les plus souvent rencontrés dans les molécules organiques ?",
         "choices": [
@@ -620,6 +619,4 @@
         ],
         "category": "chimie"
     }
-]
-
 ]

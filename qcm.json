@@ -618,5 +618,145 @@
             "Redistribution asymétrique des électrons"
         ],
         "category": "chimie"
-    }
+    },
+    {
+    "question": "Quel est le rôle principal du glucose dans l'organisme humain ?",
+    "choices": [
+        "Rôle énergétique",
+        "Constituant des protéines",
+        "Source principale d'acides gras",
+        "Élément structural des membranes cellulaires",
+        "Régulateur des réactions enzymatiques"
+    ],
+    "correct_options": [
+        "Rôle énergétique"
+    ],
+    "category": "biochimie"
+},
+    {
+    "question": "Quel est le disaccharide réducteur constitué de glucose et de galactose ?",
+    "choices": [
+        "Saccharose",
+        "Lactose",
+        "Maltose",
+        "Tréhalose",
+        "Cellobiose"
+    ],
+    "correct_options": [
+        "Lactose"
+    ],
+    "category": "biochimie"
+},
+    {
+    "question": "Parmi les isomères du glucose, lequel est un épimère en C4 ?",
+    "choices": [
+        "Fructose",
+        "Galactose",
+        "Mannose",
+        "Saccharose",
+        "Ribose"
+    ],
+    "correct_options": [
+        "Galactose"
+    ],
+    "category": "biochimie"
+},
+    {
+    "question": "Quelle est la caractéristique principale des osides non réducteurs ?",
+    "choices": [
+        "Ils sont composés de deux molécules de glucose",
+        "Ils possèdent une liaison osido-ose",
+        "Ils sont hydrolysés en monosaccharides",
+        "Ils ne présentent pas de fonction hémiacétalique libre",
+        "Ils contiennent du fructose"
+    ],
+    "correct_options": [
+        "Ils ne présentent pas de fonction hémiacétalique libre"
+    ],
+    "category": "biochimie"
+},
+    {
+    "question": "Quel est le rôle des glycoprotéines dans les cellules ?",
+    "choices": [
+        "Stocker le glucose",
+        "Protéger contre les protéases",
+        "Transporter l'oxygène",
+        "Fournir de l'énergie",
+        "Participer à la synthèse des lipides"
+    ],
+    "correct_options": [
+        "Protéger contre les protéases"
+    ],
+    "category": "biochimie"
+},
+    {
+    "question": "Quel cycle métabolique utilise le glucose comme principal carburant ?",
+    "choices": [
+        "Cycle de Krebs",
+        "Glycolyse",
+        "Phosphorylation oxydative",
+        "Cycle de Calvin",
+        "Beta-oxydation"
+    ],
+    "correct_options": [
+        "Glycolyse"
+    ],
+    "category": "biochimie"
+},
+    {
+    "question": "Quel type de liaison est présent dans le maltose ?",
+    "choices": [
+        "Liaison osido-ose",
+        "Liaison osido-oside",
+        "Liaison α 1-4 glucosidique",
+        "Liaison β 1-4 glucosidique",
+        "Liaison α 1-6 glucosidique"
+    ],
+    "correct_options": [
+        "Liaison α 1-4 glucosidique"
+    ],
+    "category": "biochimie"
+},
+    {
+    "question": "Quelle propriété distingue les cétoses des aldoses ?",
+    "choices": [
+        "Les cétoses sont plus réducteurs",
+        "Les cétoses ont une fonction carbonyle en bout de chaîne",
+        "Les cétoses sont très peu réducteurs",
+        "Les cétoses sont des diholosides",
+        "Les cétoses sont hydrophobes"
+    ],
+    "correct_options": [
+        "Les cétoses sont très peu réducteurs"
+    ],
+    "category": "biochimie"
+},
+    {
+    "question": "Quel est l'effet d'une absence d'épimérase sur le métabolisme du galactose ?",
+    "choices": [
+        "Augmentation de la synthèse de glucose",
+        "Conversion du galactose en fructose",
+        "Accumulation de galactose conduisant à la galactosémie",
+        "Conversion du galactose en mannose",
+        "Synthèse accrue de glycoprotéines"
+    ],
+    "correct_options": [
+        "Accumulation de galactose conduisant à la galactosémie"
+    ],
+    "category": "biochimie"
+},
+    {
+    "question": "Quel est le produit final de la glycolyse ?",
+    "choices": [
+        "Glucose",
+        "Pyruvate",
+        "Lactate",
+        "Acétyl-CoA",
+        "NADH"
+    ],
+    "correct_options": [
+        "Pyruvate"
+    ],
+    "category": "biochimie"
+}
 ]

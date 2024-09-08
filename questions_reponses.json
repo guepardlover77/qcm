@@ -16,7 +16,17 @@
         },
         {
             "question": "Comment on se retrouve avec R ou S ?",
-            "reponses": [],
+            "reponses": [
+                {
+                    "texte": "Tout d'abord, il faut toujours un carbone asym\u00e9trique (parfois signifi\u00e9 par un *). Ensuite, il faut faire tourner la mol\u00e9cule afin de mettre le plus petit substituant derri\u00e8re le plan (souvent un H). Et enfin, avec Cahn Ingold et Prelog on d\u00e9termine l'ordre de priorit\u00e9 des autres groupements pour faire tourner la mol\u00e9cule. Astuce : lorsqu'on dessine la moiti\u00e9 sup\u00e9rieure d'un S en faisant tourner la mol\u00e9cule, alors c'est S. Et lorsqu'on dessine la moiti\u00e9 sup\u00e9rieure d'un R, alors c'est R : regardez les images !",
+                    "like": 0,
+                    "dislike": 0,
+                    "images": [
+                        "images/reponse_1_0.jpg",
+                        "images/reponse_1_1.jpg"
+                    ]
+                }
+            ],
             "images": []
         }
     ]

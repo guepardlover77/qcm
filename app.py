@@ -171,8 +171,7 @@ def ajouter_images(images, prefix, idx):
 def faq_interface():
     st.title("🩺 Foire Aux Questions Anonyme")
     st.markdown("""
-    Bienvenue à la FAQ anonyme ! Vous pouvez poser vos questions et y répondre de manière anonyme.
-    N'oubliez pas que vous pouvez également aimer ou ne pas aimer les réponses données.
+    Oyé oyé preux chevaliers. Vous avez ici de quoi parler entre vous anonymement donc posez vos questions bêtes !!!! L'idée c'est, d'une part que les tuteurs vous répondent mais aussi que vous parliez entre vous parce qu'on commence pas à jouer au foot avec Messi... Et à part cette FAQ (totalement anonyme, c'est important), vous pouvez toujours venir poser des questions aux @les_perdrisotopes sur insta !!! Allez kissou kissou et bon courage <3
     """)
 
     data = charger_donnees()

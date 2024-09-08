@@ -77,7 +77,7 @@ def main():
         faq_interface()
     else:
         st.title("📋 QCM")
-        categories = ["Toutes", "physique", "chimie", "maths"]
+        categories = ["Toutes", "physique", "Chimie Orga", "maths", "Glucides"]
         selected_category = st.selectbox("Choisissez une catégorie de QCM", categories)
 
         if selected_category != "Toutes":

@@ -8,8 +8,8 @@ def get_db_connection():
         connection = mysql.connector.connect(
             host='172.16.230.159',
             database='qcm_db',
-            user='user',
-            password='HXRR$6iUiexw4Eg'
+            user='newuser',
+            password='password'
         )
         if connection.is_connected():
             return connection

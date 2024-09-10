@@ -147,9 +147,9 @@ def admin_interface(qcm_data):
 def get_db_connection_forum():
     try:
         connection = mysql.connector.connect(
-            host='localhost',
+            host='172.16.230.159',
             database='forum_db',
-            user='root',
+            user='user',
             password='HXRR$6iUiexw4Eg'
         )
         if connection.is_connected():

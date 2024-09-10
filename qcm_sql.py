@@ -6,9 +6,9 @@ import os
 def get_db_connection():
     try:
         connection = mysql.connector.connect(
-            host='localhost',
+            host='172.16.230.159',
             database='qcm_db',
-            user='root',
+            user='user',
             password='HXRR$6iUiexw4Eg'
         )
         if connection.is_connected():
